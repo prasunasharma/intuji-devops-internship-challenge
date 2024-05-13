@@ -1,45 +1,4 @@
-#!/bin/bash
-
-# Update package index
-sudo yum update -y
-
-# Install Docker
-sudo yum install docker -y
-
-# Start Docker service
-sudo systemctl start docker
-
-# Enable Docker service to start on boot
-sudo systemctl enable docker
-
-# Verify Docker installation
-docker --version
-
-
-
-
-git clone https://github.com/prasunasharma/php-hello-world.git
-
-# Use a base image that includes a web server (nginx, apache, etc.)
-FROM nginx:latest
-
-# Copy the application files into the container
-COPY . /usr/share/nginx/html
-
-# Expose port 80 to the outside world
-EXPOSE 80
-
-cd php-hello-world
-docker build -t php-hello-world .
-
-Sudo docker tag php-hello-world prasunamudawari/php-hello-world
-Sudo docker login
-
-Sudo docker push prasunamudawari/php-hello-world
-
-
-
-instructions for setting up Docker, building a Docker image, and pushing it to a GitHub repository
+Instructions for setting up Docker, building a Docker image, and pushing it to a GitHub repository
 
 
 Step 1: Install Docker
@@ -52,8 +11,6 @@ Sudo docker run hello-world(to test docker)
 
 Step 2: Build and Push Docker Image
 git clone https://github.com/silarhi/php-hello-world.git
-
-
 
 cd php-hello-world/
 
@@ -77,9 +34,7 @@ git commit -m "Add Dockerfile and Docker Compose YAML"
 
 git push -u origin main
 
-
-
-Jenkins Setup Guide
+4.Jenkins Setup Guide
 
 
  Installation
@@ -132,7 +87,6 @@ Once Jenkins is installed, you can start, stop, and check its status using syste
 10.To check Jenkins status
 
     sudo systemctl status jenkins
-
 
 
 
